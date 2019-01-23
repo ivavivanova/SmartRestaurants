@@ -1,2 +1,0 @@
-C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Common\obj\Debug\Common.csprojAssemblyReference.cache
-C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
