@@ -4,9 +4,18 @@ namespace Administration.Controllers
 {
     public class HomeController : Controller
     {
+        public static string UserId;
+
         public ActionResult Index()
         {
-            return View();
+            if (UserId == null)
+            {
+                return this.Redirect(Url.Action("Login", "Home"));
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public ActionResult About()
@@ -25,8 +34,9 @@ namespace Administration.Controllers
         }
 
         [HttpPost]
-        public virtual ActionResult Login(int userId)
+        public virtual ActionResult Login(string userId)
         {
+            UserId = userId;
             return this.Redirect(Url.Action("Index", "Home"));
         }
 
