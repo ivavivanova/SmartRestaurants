@@ -153,7 +153,6 @@ C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Reserv
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\ReservationModule\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\ReservationModule\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\ReservationModule\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\ReservationModule\obj\Debug\ReservationModule.csprojAssemblyReference.cache
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\ReservationModule\obj\Debug\ReservationModule.csproj.CoreCompileInputs.cache
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\ReservationModule\obj\Debug\ReservationModule.csproj.CopyComplete
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\ReservationModule\obj\Debug\ReservationModule.dll

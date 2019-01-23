@@ -153,7 +153,6 @@ C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Admini
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\obj\Debug\Administration.csprojAssemblyReference.cache
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\obj\Debug\Administration.csproj.CoreCompileInputs.cache
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\obj\Debug\Administration.csproj.CopyComplete
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\obj\Debug\Administration.dll
