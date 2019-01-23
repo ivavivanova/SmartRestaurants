@@ -29,14 +29,16 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Ресторантите на бъдещето</p>
-        </footer>
     </div>
+    <hr class="solid-hr" />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Ресторантите на бъдещето</p>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/datatables")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/site")
     @RenderSection("scripts", required: false)
 </body>
 </html>

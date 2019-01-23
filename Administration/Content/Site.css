@@ -39,6 +39,31 @@ footer{
     margin-left:30%;
 }
 
-.align-center{
+.align-center {
     text-align:center;
+}
+
+a {
+    cursor:pointer;
+}
+
+.navbar {
+    background-color: #9cd89e;
+    border-color: lightgreen;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color:black;
+}
+
+hr {
+    border-top: 1px dashed #9cd89e;
+}
+
+.solid-hr {
+    border-top: 1px solid #9cd89e;
+}
+
+.container.body-content {
+    min-height:510px;
 }

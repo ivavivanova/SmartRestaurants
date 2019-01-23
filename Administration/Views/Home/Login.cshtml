@@ -21,13 +21,12 @@
                 </button>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+                <ul class="nav navbar-nav"></ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
-        <h2 class="align-center">Вход в системата</h2>
+        <h2 class="align-center" style="color: #9cd89e">Вход в системата</h2>
         <hr />
         @using (Html.BeginForm())
         {
@@ -45,10 +44,10 @@
                 </div>
             </div>
         }
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Ресторантите на бъдещето</p>
-        </footer>
     </div>
+    <hr class="solid-hr" />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Ресторантите на бъдещето</p>
+    </footer>
 </body>
 </html>
