@@ -157,3 +157,4 @@ C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Reserv
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\ReservationModule\obj\Debug\ReservationModule.csproj.CopyComplete
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\ReservationModule\obj\Debug\ReservationModule.dll
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\ReservationModule\obj\Debug\ReservationModule.pdb
+C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\ReservationModule\obj\Debug\ReservationModule.csprojAssemblyReference.cache

@@ -5,7 +5,6 @@ C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Infras
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Infrastructure\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Infrastructure\bin\Debug\EntityFramework.xml
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Infrastructure\obj\Debug\Infrastructure.csprojAssemblyReference.cache
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Infrastructure\obj\Debug\Infrastructure.csproj.CoreCompileInputs.cache
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Infrastructure\obj\Debug\Infrastructure.csproj.CopyComplete
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Infrastructure\obj\Debug\Infrastructure.dll

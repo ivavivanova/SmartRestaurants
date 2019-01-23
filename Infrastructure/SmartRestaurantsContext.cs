@@ -1,9 +1,8 @@
 namespace Infrastructure
 {
-    using System;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
+    using Infrastructure.Enums;
+    using Infrastructure.Entities;
 
     public partial class SmartRestaurantsContext : DbContext
     {
@@ -19,17 +18,17 @@ namespace Infrastructure
         public virtual DbSet<MealProduct> MealProducts { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderMeal> OrderMeals { get; set; }
-        public virtual DbSet<OrderStatu> OrderStatus { get; set; }
+        public virtual DbSet<OrderStatus> OrderStatus { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
         public virtual DbSet<QuantityType> QuantityTypes { get; set; }
         public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
-        public virtual DbSet<ReservationStatu> ReservationStatus { get; set; }
+        public virtual DbSet<ReservationStatus> ReservationStatus { get; set; }
         public virtual DbSet<ReservationTable> ReservationTables { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Table> Tables { get; set; }
-        public virtual DbSet<TableStatu> TableStatus { get; set; }
+        public virtual DbSet<TableStatus> TableStatus { get; set; }
         public virtual DbSet<TableType> TableTypes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -88,13 +87,13 @@ namespace Infrastructure
                 .WithRequired(e => e.Order)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<OrderStatu>()
+            modelBuilder.Entity<OrderStatus>()
                 .Property(e => e.Name)
                 .IsFixedLength();
 
-            modelBuilder.Entity<OrderStatu>()
+            modelBuilder.Entity<OrderStatus>()
                 .HasMany(e => e.Orders)
-                .WithRequired(e => e.OrderStatu)
+                .WithRequired(e => e.OrderStatus)
                 .HasForeignKey(e => e.StatusId)
                 .WillCascadeOnDelete(false);
 
@@ -147,13 +146,13 @@ namespace Infrastructure
                 .WithRequired(e => e.Reservation)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<ReservationStatu>()
+            modelBuilder.Entity<ReservationStatus>()
                 .Property(e => e.Name)
                 .IsFixedLength();
 
-            modelBuilder.Entity<ReservationStatu>()
+            modelBuilder.Entity<ReservationStatus>()
                 .HasMany(e => e.Reservations)
-                .WithRequired(e => e.ReservationStatu)
+                .WithRequired(e => e.ReservationStatus)
                 .HasForeignKey(e => e.StatusId)
                 .WillCascadeOnDelete(false);
 
@@ -183,13 +182,13 @@ namespace Infrastructure
                 .WithRequired(e => e.Table)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<TableStatu>()
+            modelBuilder.Entity<TableStatus>()
                 .Property(e => e.Name)
                 .IsFixedLength();
 
-            modelBuilder.Entity<TableStatu>()
+            modelBuilder.Entity<TableStatus>()
                 .HasMany(e => e.Tables)
-                .WithRequired(e => e.TableStatu)
+                .WithRequired(e => e.TableStatus)
                 .HasForeignKey(e => e.StatusId)
                 .WillCascadeOnDelete(false);
 

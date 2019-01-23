@@ -157,3 +157,9 @@ C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Admini
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\obj\Debug\Administration.csproj.CopyComplete
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\obj\Debug\Administration.dll
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\obj\Debug\Administration.pdb
+C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\bin\Infrastructure.dll
+C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\bin\EntityFramework.dll
+C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\bin\Infrastructure.pdb
+C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\bin\Infrastructure.dll.config
+C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\bin\EntityFramework.xml
+C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Administration\obj\Debug\Administration.csprojAssemblyReference.cache

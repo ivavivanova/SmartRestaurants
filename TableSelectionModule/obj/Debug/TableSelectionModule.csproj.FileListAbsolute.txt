@@ -153,8 +153,8 @@ C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\TableS
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\TableSelectionModule\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\TableSelectionModule\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\TableSelectionModule\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\TableSelectionModule\obj\Debug\TableSelectionModule.csprojAssemblyReference.cache
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\TableSelectionModule\obj\Debug\TableSelectionModule.csproj.CoreCompileInputs.cache
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\TableSelectionModule\obj\Debug\TableSelectionModule.csproj.CopyComplete
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\TableSelectionModule\obj\Debug\TableSelectionModule.dll
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\TableSelectionModule\obj\Debug\TableSelectionModule.pdb
+C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\TableSelectionModule\obj\Debug\TableSelectionModule.csprojAssemblyReference.cache
