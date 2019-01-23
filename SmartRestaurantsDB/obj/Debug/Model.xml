@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="SmartRestaurantsDB.dll" />
-			<Metadata Name="FileName" Value="C:\USERS\IVA\DESKTOP\РАЗРАБОТКА НА ДР\SMARTRESTAURANTS\SMARTRESTAURANTSDB\OBJ\DEBUG\SMARTRESTAURANTSDB.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\IVA\DESKTOP\РАЗРАБОТКА НА ДР\REPO\SMARTRESTAURANTS\SMARTRESTAURANTSDB\OBJ\DEBUG\SMARTRESTAURANTSDB.DLL" />
 			<Metadata Name="AssemblyName" Value="SmartRestaurantsDB" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Users\Iva\Desktop\Разработка на ДР\SmartRestaurants\SmartRestaurantsDB\obj\Debug\SmartRestaurantsDB.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\SmartRestaurantsDB\obj\Debug\SmartRestaurantsDB.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>
