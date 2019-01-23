@@ -43,9 +43,8 @@ namespace Administration.Controllers
         [HttpGet]
         public virtual ActionResult Logout()
         {
-            Session.Abandon();
-
-            return new EmptyResult();
+            UserId = null;
+            return this.Redirect(Url.Action("Login", "Home"));
         }
     }
 }
