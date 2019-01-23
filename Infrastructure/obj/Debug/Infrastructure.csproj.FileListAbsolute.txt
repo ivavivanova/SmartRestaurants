@@ -9,3 +9,4 @@ C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Infras
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Infrastructure\obj\Debug\Infrastructure.csproj.CopyComplete
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Infrastructure\obj\Debug\Infrastructure.dll
 C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Infrastructure\obj\Debug\Infrastructure.pdb
+C:\Users\Iva\Desktop\Разработка на ДР\repo\SmartRestaurants\Infrastructure\obj\Debug\Infrastructure.csprojAssemblyReference.cache
