@@ -1,0 +1,77 @@
+23.1.2019 г. 0:29:27	This log contains information about the import schema operation into project 'SmartRestaurantsDB' on computer 'IVA' by user 'Iva'.
+23.1.2019 г. 0:29:27	Import of database schema has started.
+23.1.2019 г. 0:29:35	Gathering database options
+23.1.2019 г. 0:29:35	Gathering users
+23.1.2019 г. 0:29:35	Gathering roles
+23.1.2019 г. 0:29:35	Gathering application roles
+23.1.2019 г. 0:29:35	Gathering role memberships
+23.1.2019 г. 0:29:35	Gathering filegroups
+23.1.2019 г. 0:29:35	Gathering full-text catalogs
+23.1.2019 г. 0:29:35	Gathering assemblies
+23.1.2019 г. 0:29:35	Gathering certificates
+23.1.2019 г. 0:29:35	Gathering asymmetric keys
+23.1.2019 г. 0:29:35	Gathering symmetric keys
+23.1.2019 г. 0:29:35	Gathering encrypted symmetric keys
+23.1.2019 г. 0:29:35	Gathering schemas
+23.1.2019 г. 0:29:42	Gathering XML schema collections
+23.1.2019 г. 0:29:42	Gathering user-defined data types
+23.1.2019 г. 0:29:42	Gathering user-defined types
+23.1.2019 г. 0:29:42	Gathering table types
+23.1.2019 г. 0:29:42	Gathering unique keys for table types
+23.1.2019 г. 0:29:42	Gathering primary keys for table types
+23.1.2019 г. 0:29:42	Gathering indexes for table types
+23.1.2019 г. 0:29:42	Gathering check constraints for table types
+23.1.2019 г. 0:29:42	Gathering default constraints for table types
+23.1.2019 г. 0:29:42	Gathering partition functions
+23.1.2019 г. 0:29:42	Gathering partition schemes
+23.1.2019 г. 0:29:42	Gathering functions
+23.1.2019 г. 0:29:42	Gathering encrypted functions
+23.1.2019 г. 0:29:42	Gathering aggregates
+23.1.2019 г. 0:29:42	Gathering procedures
+23.1.2019 г. 0:29:42	Gathering encrypted procedures
+23.1.2019 г. 0:29:42	Gathering tables
+23.1.2019 г. 0:29:43	Gathering primary keys
+23.1.2019 г. 0:29:43	Gathering unique constraints
+23.1.2019 г. 0:29:43	Gathering foreign keys
+23.1.2019 г. 0:29:43	Gathering default constraints
+23.1.2019 г. 0:29:43	Gathering check constraints
+23.1.2019 г. 0:29:43	Gathering views
+23.1.2019 г. 0:29:43	Gathering encrypted views
+23.1.2019 г. 0:29:43	Gathering indexes
+23.1.2019 г. 0:29:43	Gathering statistics
+23.1.2019 г. 0:29:43	Gathering full-text index stoplists
+23.1.2019 г. 0:29:43	Gathering search property lists
+23.1.2019 г. 0:29:43	Gathering search properties
+23.1.2019 г. 0:29:43	Gathering full-text indexes
+23.1.2019 г. 0:29:43	Gathering column store indexes
+23.1.2019 г. 0:29:43	Gathering spatial indexes
+23.1.2019 г. 0:29:43	Gathering XML indexes
+23.1.2019 г. 0:29:43	Gathering Selective XML indexes
+23.1.2019 г. 0:29:43	Gathering encrypted triggers
+23.1.2019 г. 0:29:43	Gathering triggers
+23.1.2019 г. 0:29:43	Gathering encrypted and clr ddl triggers
+23.1.2019 г. 0:29:43	Gathering ddl triggers
+23.1.2019 г. 0:29:43	Gathering synonyms
+23.1.2019 г. 0:29:43	Gathering defaults
+23.1.2019 г. 0:29:43	Gathering data constraint uddt bindings
+23.1.2019 г. 0:29:43	Gathering rules
+23.1.2019 г. 0:29:43	Gathering data constraint uddt bindings
+23.1.2019 г. 0:29:43	Gathering message types
+23.1.2019 г. 0:29:43	Gathering queues
+23.1.2019 г. 0:29:43	Gathering contracts
+23.1.2019 г. 0:29:43	Gathering services
+23.1.2019 г. 0:29:43	Gathering event notifications
+23.1.2019 г. 0:29:43	Gathering remote service bindings
+23.1.2019 г. 0:29:43	Gathering broker priorities
+23.1.2019 г. 0:29:43	Gathering signatures
+23.1.2019 г. 0:29:43	Gathering data compression options
+23.1.2019 г. 0:29:43	Gathering sequence types
+23.1.2019 г. 0:29:43	Gathering extended properties
+23.1.2019 г. 0:29:43	Gathering credentials
+23.1.2019 г. 0:29:43	Gathering logins
+23.1.2019 г. 0:29:43	Gathering server audits
+23.1.2019 г. 0:29:44	Scanning project for duplicate elements
+23.1.2019 г. 0:29:45	Finished duplicate element processing
+23.1.2019 г. 0:29:45	Finished importing database.
+23.1.2019 г. 0:29:45	A summary of the import was saved to the following location: C:\Users\Iva\Desktop\Разработка на ДР\SmartRestaurants\SmartRestaurantsDB\Import Schema Logs\SmartRestaurantsDB_20190122102927.log
+23.1.2019 г. 0:29:45	Click Finish to continue...

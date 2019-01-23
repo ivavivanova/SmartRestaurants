@@ -1,0 +1,9 @@
+C:\Users\Iva\Desktop\Разработка на ДР\SmartRestaurants\SmartRestaurantsDB\bin\Debug\SmartRestaurantsDB.dacpac
+C:\Users\Iva\Desktop\Разработка на ДР\SmartRestaurants\SmartRestaurantsDB\bin\Debug\SmartRestaurantsDB.dll
+C:\Users\Iva\Desktop\Разработка на ДР\SmartRestaurants\SmartRestaurantsDB\bin\Debug\SmartRestaurantsDB.pdb
+C:\Users\Iva\Desktop\Разработка на ДР\SmartRestaurants\SmartRestaurantsDB\obj\Debug\Model.xml
+C:\Users\Iva\Desktop\Разработка на ДР\SmartRestaurants\SmartRestaurantsDB\obj\Debug\refactor.xml
+C:\Users\Iva\Desktop\Разработка на ДР\SmartRestaurants\SmartRestaurantsDB\obj\Debug\postdeploy.sql
+C:\Users\Iva\Desktop\Разработка на ДР\SmartRestaurants\SmartRestaurantsDB\obj\Debug\predeploy.sql
+C:\Users\Iva\Desktop\Разработка на ДР\SmartRestaurants\SmartRestaurantsDB\obj\Debug\SmartRestaurantsDB.dll
+C:\Users\Iva\Desktop\Разработка на ДР\SmartRestaurants\SmartRestaurantsDB\obj\Debug\SmartRestaurantsDB.pdb
