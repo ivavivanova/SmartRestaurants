@@ -19,6 +19,56 @@
     }
 });
 
+$.ajaxSetup({
+    cache: false,
+    beforeSend: function (xhr) {
+        xhr.setRequestHeader('RequestVerificationToken', $('input:hidden[name="__RequestVerificationToken"]').val());
+    }
+});
+
 $(document).ready(function () {
     $('.dataTable').DataTable();
+});
+
+(function ($) {
+    $.confirmationDialog = function (message, title, callback) {
+        BootstrapDialog.show({
+            title: title,
+            message: message,
+            buttons: [
+                {
+                    label: 'Да',
+                    cssClass: 'btn-primary',
+                    action: function (dialog) {
+                        dialog.close();
+                        if (callback) {
+                            callback();
+                        }
+                    }
+                },
+                {
+                    label: 'Не',
+                    cssClass: 'btn-default',
+                    action: function (dialog) {
+                        dialog.close();
+                    }
+                }]
+        });
+    };
+})(jQuery);
+
+$(document).on('click', '.js-free-table', function (e) {
+    e.preventDefault();
+
+    var url = $(this).data('url'),
+        tableId = $(this).data('table-id'),
+        $tableNumber = $($(this).closest('tr')).find('.table-num');
+
+    $.confirmationDialog('Маса номер <b>' + $tableNumber.text() + '</b> ще бъде отбелязана в системата като "свободна", сигурни ли сте, че искате да продължите?', 'Освобождаване на маса', function () {
+        $.ajax({
+            url: url,
+            type: 'Post',
+            data: { tableId: tableId }
+        });
+    });
 });

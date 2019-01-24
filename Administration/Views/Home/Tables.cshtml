@@ -16,9 +16,16 @@
     <tbody>
         @foreach (var table in Model.Tables)
         {
-            <tr data-id="@table.TableId">
-                <td>@table.TableNumber</td>
-                <td><span class="glyphicon glyphicon-check" title="Освободи" style="color:forestgreen; cursor:pointer;"></span></td>
+            <tr>
+                <td class="table-num">@table.TableNumber</td>
+                <td>
+                    <span class="glyphicon glyphicon-check js-free-table"
+                          title="Освободи"
+                          style="color:forestgreen; cursor:pointer;"
+                          data-url="@Url.Action("SetFreeTable", "Home")"
+                          data-table-id="@table.TableId">
+                    </span>
+                </td>
             </tr>
         }
     </tbody>

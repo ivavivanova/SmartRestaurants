@@ -1,5 +1,6 @@
 ﻿using Administration.ViewModels;
 using Infrastructure;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace Administration.Controllers
@@ -9,6 +10,7 @@ namespace Administration.Controllers
         public static string UserRole;
         private UnitOfWork unitOfWork = new UnitOfWork();
 
+        [HttpGet]
         public ActionResult Index()
         {
             if (UserRole == null)
@@ -21,28 +23,40 @@ namespace Administration.Controllers
             }
         }
 
+        [HttpGet]
         public ActionResult Tables()
         {
-            return View(new TablesViewModel());
+            return View(new TablesViewModel(unitOfWork.TableRepository.GetAll().Where(t => t.StatusId == 2)));
         }
 
+        [HttpGet]
         public ActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        public virtual ActionResult Login(string userRole)
+        public ActionResult Login(string userRole)
         {
             UserRole = userRole;
             return this.Redirect(Url.Action("Index", "Home"));
         }
 
         [HttpGet]
-        public virtual ActionResult Logout()
+        public ActionResult Logout()
         {
             UserRole = null;
             return this.Redirect(Url.Action("Login", "Home"));
+        }
+
+        [HttpPost]
+        public ActionResult SetFreeTable(int tableId)
+        {
+            var table = this.unitOfWork.TableRepository.GetByID(tableId);
+            table.StatusId = 1;
+            this.unitOfWork.Save();
+
+            return this.Redirect(Url.Action("Tables", "Home"));
         }
     }
 }

@@ -10,7 +10,12 @@ namespace Administration.ViewModels
     {
         public TablesViewModel()
         {
-            Tables = new List<Table> { new Table { TableId = 1, TableNumber = "aaa44" } };
+            Tables = new List<Table>();
+        }
+
+        public TablesViewModel(IEnumerable<Infrastructure.Entities.Table> tables)
+        {
+            Tables = tables.Select(t => Table.MapFromEntity(t)).ToList();
         }
 
         public List<Table> Tables { get; set; }
