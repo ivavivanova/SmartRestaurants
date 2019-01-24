@@ -1,5 +1,5 @@
 ﻿using Administration.ViewModels;
-using Common;
+using Infrastructure;
 using System.Web.Mvc;
 
 namespace Administration.Controllers
@@ -17,7 +17,7 @@ namespace Administration.Controllers
             }
             else
             {
-                return View(new ReservationsViewModel());
+                return View(new ReservationsViewModel(unitOfWork.ReservationRepository.GetAll()));
             }
         }
 

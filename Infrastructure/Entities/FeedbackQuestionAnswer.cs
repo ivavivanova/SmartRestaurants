@@ -6,7 +6,7 @@ namespace Infrastructure.Entities
     [Table("FeedbackQuestionAnswer")]
     public partial class FeedbackQuestionAnswer
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public int FeedbackId { get; set; }

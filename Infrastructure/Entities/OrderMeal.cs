@@ -5,7 +5,7 @@ namespace Infrastructure.Entities
     [Table("OrderMeal")]
     public partial class OrderMeal
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public int OrderId { get; set; }

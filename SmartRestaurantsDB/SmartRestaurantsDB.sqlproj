@@ -85,4 +85,10 @@
   <ItemGroup>
     <PostDeploy Include="PostDeploymentScript.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\ReservationStatusData.sql" />
+    <None Include="Data\TableStatusData.sql" />
+    <None Include="Data\TableTypeData.sql" />
+    <None Include="Data\SampleData.sql" />
+  </ItemGroup>
 </Project>

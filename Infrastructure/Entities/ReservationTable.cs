@@ -5,7 +5,7 @@ namespace Infrastructure.Entities
     [Table("ReservationTable")]
     public partial class ReservationTable
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public int TableId { get; set; }

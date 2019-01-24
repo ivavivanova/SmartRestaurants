@@ -14,7 +14,7 @@ namespace Infrastructure.Entities
             ReservationTables = new HashSet<ReservationTable>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]

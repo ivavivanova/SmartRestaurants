@@ -16,7 +16,7 @@ namespace Infrastructure.Entities
             OrderMeals = new HashSet<OrderMeal>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public int TableId { get; set; }
