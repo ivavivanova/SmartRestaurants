@@ -1,0 +1,25 @@
+﻿@model Administration.ViewModels.TablesViewModel
+@{
+    ViewBag.Title = "Заети маси";
+}
+
+<hr />
+<h2 class="align-center" style="color:#64d16b;">Освобождаване на маса</h2>
+<hr />
+<table id="table_id" class="hover dataTable">
+    <thead>
+        <tr style="background:#64d16b">
+            <th>Идентификатор на маса</th>
+            <th width="40px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var table in Model.Tables)
+        {
+            <tr data-id="@table.TableId">
+                <td>@table.TableNumber</td>
+                <td><span class="glyphicon glyphicon-check" title="Освободи" style="color:forestgreen; cursor:pointer;"></span></td>
+            </tr>
+        }
+    </tbody>
+</table>

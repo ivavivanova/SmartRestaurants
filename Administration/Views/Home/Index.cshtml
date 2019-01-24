@@ -1,41 +1,60 @@
-﻿@{
+﻿@model Administration.ViewModels.ReservationsViewModel
+@{
     ViewBag.Title = "Резервации";
 }
 
 <hr />
-<h2 class="align-center" style="color:lightcoral">Резервации чакащи обработка</h2>
+<h2 class="align-center" style="color:lightcoral;">Резервации чакащи обработка</h2>
 <hr />
-<table id="table_id" class="display dataTable">
+<table id="table_id" class="hover dataTable">
     <thead>
         <tr style="background:lightcoral">
-            <th>Column 1</th>
-            <th>Column 2</th>
-            <th>Column 3</th>
-            <th>Column 4</th>
+            <th>Имейл на клиент</th>
+            <th>Брой места</th>
+            <th>Направена на(дата и час)</th>
+            <th>Резервирана за(дата и час)</th>
+            <th width="40px;"></th>
         </tr>
     </thead>
     <tbody>
+        @foreach (var reservation in Model.ReservationsForProcessing)
+        {
+            <tr data-id="@reservation.ReservationId">
+                <td>@reservation.CustomerEmail</td>
+                <td>@reservation.ChairsNeeded</td>
+                <td>@reservation.RegistrationDate</td>
+                <td>@reservation.ReservationDateTime</td>
+                <td><span class="glyphicon glyphicon-pencil" title="Редактиране" style="color:forestgreen; cursor:pointer;"></span></td>
+            </tr>
+        }
     </tbody>
 </table>
 
 <hr />
 <h2 class="align-center" style="color:#64d16b">Направени резервации</h2>
 <hr />
-<table id="table_id2" class="display dataTable">
+<table id="table_id2" class="hover dataTable">
     <thead>
         <tr style="background:#64d16b">
-            <th>Column 1</th>
-            <th>Column 2</th>
+            <th>Имейл на клиент</th>
+            <th>Брой места</th>
+            <th>Направена на(дата и час)</th>
+            <th>Резервирана за(дата и час)</th>
+            <th width="20px;"></th>
+            <th width="20px;"></th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Row 1 Data 1</td>
-            <td>Row 1 Data 2</td>
-        </tr>
-        <tr>
-            <td>Row 2 Data 1</td>
-            <td>Row 2 Data 2</td>
-        </tr>
+        @foreach (var reservation in Model.ReadyReservations)
+        {
+            <tr data-id="@reservation.ReservationId">
+                <td>@reservation.CustomerEmail</td>
+                <td>@reservation.ChairsNeeded</td>
+                <td>@reservation.RegistrationDate</td>
+                <td>@reservation.ReservationDateTime</td>
+                <td><span class="glyphicon glyphicon-pencil" title="Редактиране" style="color:forestgreen;cursor:pointer;"></span></td>
+                <td><span class="glyphicon glyphicon-trash" title="Изтриване" style="color:red; cursor:pointer;"></span></td>
+            </tr>
+        }
     </tbody>
 </table>

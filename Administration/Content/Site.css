@@ -37,6 +37,8 @@ footer{
     border: 2px solid lightgreen;
     padding: 10px;
     margin-left:30%;
+    padding-left: 92px;
+    padding-right: 92px;
 }
 
 .align-center {
@@ -66,4 +68,15 @@ hr {
 
 .container.body-content {
     min-height:510px;
+}
+
+input[type="search"] {
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.4285;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }

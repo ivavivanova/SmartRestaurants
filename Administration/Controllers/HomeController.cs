@@ -1,31 +1,27 @@
-﻿using System.Web.Mvc;
+﻿using Administration.ViewModels;
+using System.Web.Mvc;
 
 namespace Administration.Controllers
 {
     public class HomeController : Controller
     {
-        public static string UserId;
+        public static string UserRole;
 
         public ActionResult Index()
         {
-            if (UserId == null)
+            if (UserRole == null)
             {
                 return this.Redirect(Url.Action("Login", "Home"));
             }
             else
             {
-                return View();
+                return View(new ReservationsViewModel());
             }
         }
 
-        public ActionResult About()
+        public ActionResult Tables()
         {
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            return View();
+            return View(new TablesViewModel());
         }
 
         public ActionResult Login()
@@ -34,16 +30,16 @@ namespace Administration.Controllers
         }
 
         [HttpPost]
-        public virtual ActionResult Login(string userId)
+        public virtual ActionResult Login(string userRole)
         {
-            UserId = userId;
+            UserRole = userRole;
             return this.Redirect(Url.Action("Index", "Home"));
         }
 
         [HttpGet]
         public virtual ActionResult Logout()
         {
-            UserId = null;
+            UserRole = null;
             return this.Redirect(Url.Action("Login", "Home"));
         }
     }
