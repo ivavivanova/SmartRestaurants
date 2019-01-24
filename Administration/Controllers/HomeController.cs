@@ -1,4 +1,5 @@
 ﻿using Administration.ViewModels;
+using Common;
 using System.Web.Mvc;
 
 namespace Administration.Controllers
@@ -6,6 +7,7 @@ namespace Administration.Controllers
     public class HomeController : Controller
     {
         public static string UserRole;
+        private UnitOfWork unitOfWork = new UnitOfWork();
 
         public ActionResult Index()
         {
