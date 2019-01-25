@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Administration.CommunicationModule;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +7,7 @@ using System.Web.Mvc;
 
 namespace ReservationModule.Controllers
 {
-    public class HomeController : Controller
+    public class ReservationHomeController : Controller
     {
         public ActionResult Index()
         {
@@ -31,6 +32,17 @@ namespace ReservationModule.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Index(
+            string userEmail,
+            int chairsNeeded,
+            DateTime date,
+            DateTime time)
+        {
+            CommunicationModule.SaveReservation(userEmail, chairsNeeded, date, time);
             return View();
         }
     }
