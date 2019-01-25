@@ -37,11 +37,18 @@
                 <div class="form-group">
                     <div class="col-md-6 col-sm-6" style="margin-bottom: 10px;">
                         <label for="type">Резервирай за дата:</label>
-                        <input id="userEmail" class="form-control" />
+                        <div class="col-md-12 input-group date js-datepicker">
+                            <div>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-6 col-sm-6" style="margin-bottom: 10px;">
                         <label for="type">Резервирай за час:</label>
-                        <input id="userEmail" class="form-control" />
+                        <input id="userEmail" class="form-control timepicker" />
                     </div>
                 </div>
                 <div class="col-md-12 form-group">

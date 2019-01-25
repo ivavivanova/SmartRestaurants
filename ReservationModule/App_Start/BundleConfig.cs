@@ -20,10 +20,17 @@ namespace ReservationModule
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap-datepicker.js",
+                      "~/Scripts/jquery.timepicker.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Site").Include(
+                      "~/Scripts/Site.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-datepicker.css",
+                      "~/Content/jquery.timepicker.css",
                       "~/Content/site.css"));
         }
     }
