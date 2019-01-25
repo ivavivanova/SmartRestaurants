@@ -1,5 +1,6 @@
 ﻿using Administration.ViewModels;
 using Infrastructure;
+using Infrastructure.Repositories.Implementations;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -9,6 +10,14 @@ namespace Administration.Controllers
     {
         public static string UserRole;
         private UnitOfWork unitOfWork = new UnitOfWork();
+        private readonly ReservationTableRepositoryImplementation reservationTableRepository;
+        private readonly TableRepositoryImplementation tableRepository;
+
+        public HomeController()
+        {
+            reservationTableRepository = new ReservationTableRepositoryImplementation(unitOfWork.ReservationTableRepository);
+            tableRepository = new TableRepositoryImplementation(unitOfWork.TableRepository);
+        }
 
         [HttpGet]
         public ActionResult Index()
@@ -53,30 +62,16 @@ namespace Administration.Controllers
         public ActionResult ReservationDetails(int reservationId)
         {
             var reservation = this.unitOfWork.ReservationRepository.GetByID(reservationId);
-            var tables = this.unitOfWork.ReservationTableRepository
-                .GetAll()
-                .Where(r => r.ReservationId == reservationId)
-                .Select(r => r.Table)
-                .ToList();
-            var freeTables = this.unitOfWork.TableRepository
-                .GetAll()
-                .Where(t => t.StatusId == 1 && (
-                    !unitOfWork.ReservationTableRepository.GetAll()
-                        .Where(r => r.TableId == t.Id).Any() ||
-                    unitOfWork.ReservationTableRepository.GetAll()
-                        .Where(r => r.TableId == t.Id && 
-                            r.Reservation.ReservationDate.Date.Add(r.Reservation.ReservationTime.TimeOfDay) >
-                                reservation.ReservationDate.Date.Add(reservation.ReservationTime.TimeOfDay).AddHours(1)).Any()))
-                 .ToList();
+            var tables = reservationTableRepository.GetTablesByReservationId(reservationId);
+            var freeTables = tableRepository.GetFreeTables(unitOfWork.ReservationTableRepository.GetAll(), reservation);
+
             return View(ReservationDetailsViewModel.MapFromEntities(reservation, tables, freeTables));
         }
 
         [HttpPost]
         public ActionResult ReservationDetails(ReservationDetailsViewModel model)
         {
-            var reservationTablesForRemove = this.unitOfWork.ReservationTableRepository
-                    .GetAll()
-                    .Where(r => r.ReservationId == model.ReservationId);
+            var reservationTablesForRemove = reservationTableRepository.GetByReservationId(model.ReservationId);
 
             if (model.CheckedTablesForReservation.Any())
             {

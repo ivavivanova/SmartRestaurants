@@ -66,6 +66,9 @@
     <Compile Include="Entities\Reservation.cs" />
     <Compile Include="Enums\ReservationStatus.cs" />
     <Compile Include="Entities\ReservationTable.cs" />
+    <Compile Include="Repositories\Implementations\ReservationRepositoryImplementation.cs" />
+    <Compile Include="Repositories\Implementations\ReservationTableRepositoryImplementation.cs" />
+    <Compile Include="Repositories\Implementations\TableRepositoryImplementation.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="SmartRestaurantsContext.cs" />
     <Compile Include="sysdiagram.cs" />
@@ -78,9 +81,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\Implementations\" />
-    <Folder Include="Repositories\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
