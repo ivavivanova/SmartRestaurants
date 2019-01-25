@@ -32,13 +32,16 @@ a {
     border-color: #af96cc;
 }
 
-.navbar-inverse .navbar-nav > li > a {
-    color: white;
+.navbar-inverse .navbar-nav > li > a,
+.navbar-brand {
+    color: white !important;
 }
 
     .navbar-inverse .navbar-nav > li > a:hover,
-    .navbar-inverse .navbar-nav > li > a:focus {
-        color: black;
+    .navbar-inverse .navbar-nav > li > a:focus,
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+        color: black !important;
     }
 
 hr {
