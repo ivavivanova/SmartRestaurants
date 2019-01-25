@@ -46,6 +46,7 @@
             <th>Брой места</th>
             <th>Направена на(дата и час)</th>
             <th>Резервирана за(дата и час)</th>
+            <th>Статус на резервацията</th>
             <th width="20px;"></th>
             <th width="20px;"></th>
         </tr>
@@ -58,6 +59,7 @@
                 <td>@reservation.ChairsNeeded</td>
                 <td>@reservation.RegistrationDate</td>
                 <td class="reservation-date">@reservation.ReservationDateTime</td>
+                <td>@reservation.Status</td>
                 <td>
                     <span class="glyphicon glyphicon-pencil js-reservation-edit"
                           title="Редактиране"

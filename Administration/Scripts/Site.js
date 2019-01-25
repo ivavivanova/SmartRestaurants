@@ -84,7 +84,8 @@ $(document).on('click', '.js-decline-reservation', function (e) {
         url = $btn.data('url'),
         reservationId = $btn.data('id'),
         customerEmail = $btn.data('email'),
-        reservationDate = $btn.data('reservation-date');
+        reservationDate = $btn.data('reservation-date'),
+        redirectUrl = $btn.data('redirect-url');
 
     $.confirmationDialog(
         'Резервация направена от <b>'
@@ -97,7 +98,11 @@ $(document).on('click', '.js-decline-reservation', function (e) {
             type: 'Post',
             data: { reservationId: reservationId },
             success: function () {
-                window.location.reload();
+                if (redirectUrl) {
+                    window.location = redirectUrl;
+                } else {
+                    window.location.reload();
+                }
             }
         });
     });
