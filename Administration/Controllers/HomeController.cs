@@ -58,5 +58,15 @@ namespace Administration.Controllers
 
             return this.Redirect(Url.Action("Tables", "Home"));
         }
+
+        [HttpPost]
+        public ActionResult DeclineReservation(int reservationId)
+        {
+            var reservation = this.unitOfWork.ReservationRepository.GetByID(reservationId);
+            reservation.StatusId = 3;
+            this.unitOfWork.Save();
+
+            return this.Redirect(Url.Action("Index", "Home"));
+        }
     }
 }

@@ -48,12 +48,18 @@
         @foreach (var reservation in Model.ReadyReservations)
         {
             <tr data-id="@reservation.ReservationId">
-                <td>@reservation.CustomerEmail</td>
+                <td class="email">@reservation.CustomerEmail</td>
                 <td>@reservation.ChairsNeeded</td>
                 <td>@reservation.RegistrationDate</td>
-                <td>@reservation.ReservationDateTime</td>
+                <td class="reservation-date">@reservation.ReservationDateTime</td>
                 <td><span class="glyphicon glyphicon-pencil" title="Редактиране" style="color:forestgreen;cursor:pointer;"></span></td>
-                <td><span class="glyphicon glyphicon-trash" title="Изтриване" style="color:red; cursor:pointer;"></span></td>
+                <td>
+                    <span class="glyphicon glyphicon-remove js-decline-reservation"
+                          title="Отказване на резервация"
+                          style="color:red; cursor:pointer;"
+                          data-url="@Url.Action("DeclineReservation", "Home")">
+                    </span>
+                </td>
             </tr>
         }
     </tbody>

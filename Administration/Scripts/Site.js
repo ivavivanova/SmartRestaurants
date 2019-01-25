@@ -76,3 +76,29 @@ $(document).on('click', '.js-free-table', function (e) {
         });
     });
 });
+
+$(document).on('click', '.js-decline-reservation', function (e) {
+    e.preventDefault();
+
+    var $btn = $(this),
+        url = $btn.data('url'),
+        reservationId = $btn.closest('tr').data('id'),
+        customerEmail = $($btn.closest('tr')).find('.email').text(),
+        reservationDate = $($btn.closest('tr')).find('.reservation-date').text();
+
+    $.confirmationDialog(
+        'Резервация направена от <b>'
+        + customerEmail
+        + '</b> за <b>'
+        + reservationDate
+        +'</b>  ще бъде отказана, сигурни ли сте, че искате да продължите?', 'Отказване на резервация', function () {
+        $.ajax({
+            url: url,
+            type: 'Post',
+            data: { reservationId: reservationId },
+            success: function () {
+                window.location.reload();
+            }
+        });
+    });
+});
