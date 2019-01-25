@@ -1,7 +1,25 @@
 ﻿@{
     ViewBag.Title = "За нас";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card filled-card">
+            <h5 class="card-title">Какво са "Ресторантите на бъдещето"</h5>
+            <div class="card-body">
+                <p class="card-text">
+                    Може да направите своята резервация, като попълните формата в ляво.
+                </p>
+                <p class="card-text">
+                    Резервации се приемат най-малко половин час преди часът, за който е резервацията.
+                </p>
+                <p class="card-text">
+                    Ако желаете да посетите ресторанта веднага, то няма нужда да правите резервация.
+                    Чрез бутон <b>Преглед</b> може да разгледате с какви свободни маси разполага в момента.
+                </p>
+                <a href="@Url.Action("ViewTables", "ReservationHome")" class="btn btn-primary">Преглед</a>
+            </div>
+        </div>
+    </div>
+</div>
+
