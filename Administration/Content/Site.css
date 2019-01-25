@@ -80,3 +80,7 @@ input[type="search"] {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+.checkbox-list[type='checkbox'] {
+    margin-right: 7px;
+}

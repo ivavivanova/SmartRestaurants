@@ -65,7 +65,7 @@ $(document).on('click', '.js-free-table', function (e) {
         tableId = $btn.data('table-id'),
         $tableNumber = $($btn.closest('tr')).find('.table-num');
 
-    $.confirmationDialog('Маса номер <b>' + $tableNumber.text() + '</b> ще бъде отбелязана в системата като "свободна", сигурни ли сте, че искате да продължите?', 'Освобождаване на маса', function () {
+    $.confirmationDialog('Маса номер <b>' + $tableNumber.text() + '</b> ще бъде отбелязана в системата като "свободна".<br/> Сигурни ли сте, че искате да продължите?', 'Освобождаване на маса', function () {
         $.ajax({
             url: url,
             type: 'Post',
@@ -82,16 +82,16 @@ $(document).on('click', '.js-decline-reservation', function (e) {
 
     var $btn = $(this),
         url = $btn.data('url'),
-        reservationId = $btn.closest('tr').data('id'),
-        customerEmail = $($btn.closest('tr')).find('.email').text(),
-        reservationDate = $($btn.closest('tr')).find('.reservation-date').text();
+        reservationId = $btn.data('id'),
+        customerEmail = $btn.data('email'),
+        reservationDate = $btn.data('reservation-date');
 
     $.confirmationDialog(
         'Резервация направена от <b>'
         + customerEmail
         + '</b> за <b>'
         + reservationDate
-        +'</b>  ще бъде отказана, сигурни ли сте, че искате да продължите?', 'Отказване на резервация', function () {
+        +'</b>  ще бъде отказана.<br/> Сигурни ли сте, че искате да продължите?', 'Отказване на резервация', function () {
         $.ajax({
             url: url,
             type: 'Post',
@@ -101,4 +101,10 @@ $(document).on('click', '.js-decline-reservation', function (e) {
             }
         });
     });
+});
+
+$(document).on('click', '.js-reservation-edit', function (e) {
+    e.preventDefault();
+
+    window.location = $(this).data('url');
 });

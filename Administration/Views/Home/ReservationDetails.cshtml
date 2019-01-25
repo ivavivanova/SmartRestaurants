@@ -1,0 +1,82 @@
+﻿@model Administration.ViewModels.ReservationDetailsViewModel
+
+@using Infrastructure.Entities;
+@using MvcCheckBoxList.Model
+@{
+    ViewBag.Title = "Детайли по резервацията";
+}
+
+<hr />
+<h2 class="align-center" style="color:#64d16b;">@ViewBag.Title</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    <div class="form-group row">
+        <div class="col-md-4">
+            @Html.DisplayName("Имейл:")
+            <b>@Html.DisplayFor(m => m.CustomerEmail)</b>
+        </div>
+        <div class="col-md-4">
+            @Html.DisplayName("Резервация за:")
+            <b>@Html.DisplayFor(m => m.ReservationDateTime)</b>
+        </div>
+        <div class="col-md-4">
+            @Html.DisplayName("Направена на:")
+            <b>@Html.DisplayFor(m => m.RegistrationDate)</b>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-4">
+            @Html.DisplayName("Места:")
+            @Html.TextBoxFor(m => m.ChairsNeeded, new { @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+            @Html.DisplayName("Запазени маси:")
+            <br />
+            @if (Model.TablesForReservation.Any())
+            {
+                @Html.CheckBoxListFor(m => m.CheckedTablesForReservation,
+                              model => model.TablesForReservation,
+                              table => table.Id,
+                              table => table.TableNumber + " (" + table.MaxChairs + " местна)",
+                              model => model.TablesForReservation,
+                              Position.Vertical,
+                              m => new { @class="checkbox-list"})
+            }
+            else
+            {
+                <b><span>Няма избрани маси.</span></b>
+            }
+        </div>
+        <div class="col-md-4">
+            @Html.DisplayName("Свободни маси, които могат да се добавят:")
+            <br />
+            @if (Model.FreeTables.Any())
+            {
+                @Html.CheckBoxListFor(m => m.CheckedFreeTables,
+                        model => model.FreeTables,
+                        table => table.Id,
+                        table => table.TableNumber + " (" + table.MaxChairs + " местна)",
+                        model => new List<Table>(),
+                        Position.Vertical,
+                        m => new { @class="checkbox-list"})
+            }
+            else
+            {
+                <b><span>Няма свободни маси за посочения час.</span></b>
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <input name="submit" class="btn btn-success pull-left" style="width: 150px;" type="submit" value="Запази промените">
+        <input class="btn btn-danger pull-right js-decline-reservation"
+               style="width: 170px;"
+               type="button"
+               value="Откажи резервацията"
+               data-id="@Model.ReservationId"
+               data-email="@Model.CustomerEmail"
+               data-reservation-date="@Model.ReservationDateTime"
+               data-url="@Url.Action("DeclineReservation", "Home")">
+    </div>
+}

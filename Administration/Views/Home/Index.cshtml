@@ -24,7 +24,13 @@
                 <td>@reservation.ChairsNeeded</td>
                 <td>@reservation.RegistrationDate</td>
                 <td>@reservation.ReservationDateTime</td>
-                <td><span class="glyphicon glyphicon-pencil" title="Редактиране" style="color:forestgreen; cursor:pointer;"></span></td>
+                <td>
+                    <span class="glyphicon glyphicon-pencil js-reservation-edit"
+                          title="Редактиране"
+                          style="color:forestgreen; cursor:pointer;"
+                          data-url="@Url.Action("ReservationDetails", "Home", new { reservationId = reservation.ReservationId})">
+                    </span>
+                </td>
             </tr>
         }
     </tbody>
@@ -52,11 +58,20 @@
                 <td>@reservation.ChairsNeeded</td>
                 <td>@reservation.RegistrationDate</td>
                 <td class="reservation-date">@reservation.ReservationDateTime</td>
-                <td><span class="glyphicon glyphicon-pencil" title="Редактиране" style="color:forestgreen;cursor:pointer;"></span></td>
+                <td>
+                    <span class="glyphicon glyphicon-pencil js-reservation-edit"
+                          title="Редактиране"
+                          style="color:forestgreen;cursor:pointer;"
+                          data-url="@Url.Action("ReservationDetails", "Home", new { reservationId = reservation.ReservationId})">
+                     </span>
+                </td>
                 <td>
                     <span class="glyphicon glyphicon-remove js-decline-reservation"
                           title="Отказване на резервация"
                           style="color:red; cursor:pointer;"
+                          data-id="@reservation.ReservationId"
+                          data-email="@reservation.CustomerEmail"
+                          data-reservation-date ="@reservation.ReservationDateTime"
                           data-url="@Url.Action("DeclineReservation", "Home")">
                     </span>
                 </td>

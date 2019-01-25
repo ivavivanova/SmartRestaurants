@@ -8,6 +8,7 @@ namespace Infrastructure
     {
         private SmartRestaurantsContext context = new SmartRestaurantsContext();
         private RepositoryBase<Reservation> reservationRepository;
+        private RepositoryBase<ReservationTable> reservationTableRepository;
         private RepositoryBase<Table> tableRepository;
 
         public RepositoryBase<Reservation> ReservationRepository
@@ -20,6 +21,19 @@ namespace Infrastructure
                     this.reservationRepository = new RepositoryBase<Reservation>(context);
                 }
                 return reservationRepository;
+            }
+        }
+
+        public RepositoryBase<ReservationTable> ReservationTableRepository
+        {
+            get
+            {
+
+                if (this.reservationTableRepository == null)
+                {
+                    this.reservationTableRepository = new RepositoryBase<ReservationTable>(context);
+                }
+                return reservationTableRepository;
             }
         }
 
