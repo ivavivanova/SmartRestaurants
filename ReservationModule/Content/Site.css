@@ -22,3 +22,104 @@ select,
 textarea {
     max-width: 280px;
 }
+
+a {
+    cursor: pointer;
+}
+
+.navbar {
+    background-color: #c1abdb;
+    border-color: #af96cc;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+    .navbar-inverse .navbar-nav > li > a:hover,
+    .navbar-inverse .navbar-nav > li > a:focus {
+        color: black;
+    }
+
+hr {
+    border-top: 1px dashed #af96cc;
+}
+
+.solid-hr {
+    border-top: 1px solid #af96cc;
+}
+
+.container.body-content {
+    min-height: 535px;
+}
+
+footer {
+    color: #af96cc;
+    text-align: center;
+}
+
+    footer p {
+        margin: 0px;
+    }
+
+.margin-bottom-5 {
+    margin-bottom: 5px;
+}
+
+.card {
+    margin-top: 15px;
+    font-size: 1em;
+    overflow: hidden;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #af96cc, 0 0 0 1px #af96cc;
+}
+
+.filled-card {
+    background-color: #c1abdb;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.28571429em;
+    font-weight: 700;
+    line-height: 1.2857em;
+    border-bottom: 1px solid #af96cc;
+    background-color: #c1abdb;
+    padding: 0px;
+    padding-top: 15px;
+    margin-top: 0px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-text {
+    clear: both;
+    margin-top: .5em;
+    color: rgba(0, 0, 0, .68);
+}
+
+.card-footer {
+    font-size: 1em;
+    position: static;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    padding: .75em 1em;
+    color: rgba(0, 0, 0, .4);
+    border-top: 1px solid rgba(0, 0, 0, .05) !important;
+    background: #fff;
+}
+
+.btn-primary {
+    background-color: #552d91;
+    border-color: #3d2168;
+}
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+        background-color: #3d2168;
+        border-color: black;
+    }

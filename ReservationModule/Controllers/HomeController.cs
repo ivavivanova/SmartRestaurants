@@ -26,5 +26,12 @@ namespace ReservationModule.Controllers
 
             return View();
         }
+
+        public ActionResult ViewTables()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }

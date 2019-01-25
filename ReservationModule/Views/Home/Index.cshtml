@@ -2,30 +2,71 @@
     ViewBag.Title = "Ресторантите на бъдещето";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="col-sm-6">
+        <div class="card">
+            <h5 class="card-title text-center">Резервация</h5>
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6" style="margin-bottom: 10px;">
+                        <label for="userEmail">Имейл адрес:</label>
+                        <input id="userEmail" class="form-control" />
+                    </div>
+                    <div class="col-md-6 col-sm-6" style="margin-bottom: 10px;">
+                        <label for="chairsNeeded">Брой места:</label>
+                        <input id="chairsNeeded" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6" style="margin-bottom: 10px;">
+                        <label for="type">Тип маса:</label>
+                        <select name="type" id="type" class="form-control">
+                            <option value="1">Непушачи</option>
+                            <option value="2">Пушачи</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 col-sm-6" style="margin-bottom: 10px;">
+                        <label for="type">Място:</label>
+                        <select name="type" id="type" class="form-control">
+                            <option value="1">Вътре</option>
+                            <option value="2">Навън</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6" style="margin-bottom: 10px;">
+                        <label for="type">Резервирай за дата:</label>
+                        <input id="userEmail" class="form-control" />
+                    </div>
+                    <div class="col-md-6 col-sm-6" style="margin-bottom: 10px;">
+                        <label for="type">Резервирай за час:</label>
+                        <input id="userEmail" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-12 form-group">
+                    <input type="submit" class="btn btn-primary pull-right" value="Завърши резервацията" />
+                </div>
+            }
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <div class="col-sm-6">
+        <div class="card filled-card">
+            <h5 class="card-title">Преглед на свободните маси в момента</h5>
+            <div class="card-body">
+                <p class="card-text">
+                    Може да направите своята резервация, като попълните формата в ляво.
+                </p>
+                <p class="card-text">
+                    Резервации се приемат най-малко половин час преди часът, за който е резервацията.
+                </p>
+                <p class="card-text">
+                    Ако желаете да посетите ресторанта веднага, то няма нужда да правите резервация.
+                    Чрез бутон <b>Преглед</b> може да разгледате с какви свободни маси разполага в момента.
+                </p>
+                <a href="@Url.Action("ViewTables", "Home")" class="btn btn-primary">Преглед</a>
+            </div>
+        </div>
     </div>
 </div>
