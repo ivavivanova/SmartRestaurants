@@ -60,15 +60,19 @@ $(document).ready(function () {
 $(document).on('click', '.js-free-table', function (e) {
     e.preventDefault();
 
-    var url = $(this).data('url'),
-        tableId = $(this).data('table-id'),
-        $tableNumber = $($(this).closest('tr')).find('.table-num');
+    var $btn = $(this),
+        url = $btn.data('url'),
+        tableId = $btn.data('table-id'),
+        $tableNumber = $($btn.closest('tr')).find('.table-num');
 
     $.confirmationDialog('Маса номер <b>' + $tableNumber.text() + '</b> ще бъде отбелязана в системата като "свободна", сигурни ли сте, че искате да продължите?', 'Освобождаване на маса', function () {
         $.ajax({
             url: url,
             type: 'Post',
-            data: { tableId: tableId }
+            data: { tableId: tableId },
+            success: function () {
+                window.location.reload();
+            }
         });
     });
 });
