@@ -1,5 +1,6 @@
 ﻿using Administration.ViewModels;
 using Infrastructure;
+using Infrastructure.Enums;
 using Infrastructure.Repositories.Implementations;
 using System.Linq;
 using System.Web.Mvc;
@@ -35,7 +36,10 @@ namespace Administration.Controllers
         [HttpGet]
         public ActionResult Tables()
         {
-            return View(new TablesViewModel(unitOfWork.TableRepository.GetAll().Where(t => t.StatusId == 2)));
+            return View(new TablesViewModel(
+                unitOfWork.TableRepository
+                    .GetAll()
+                    .Where(t => t.StatusId == TableStatus.StatusOccupiedId)));
         }
 
         [HttpGet]
@@ -106,7 +110,7 @@ namespace Administration.Controllers
         public ActionResult SetFreeTable(int tableId)
         {
             var table = this.unitOfWork.TableRepository.GetByID(tableId);
-            table.StatusId = 1;
+            table.StatusId = TableStatus.StatusFreeId;
             this.unitOfWork.Save();
 
             return this.Redirect(Url.Action("Tables", "Home"));
@@ -116,7 +120,7 @@ namespace Administration.Controllers
         public ActionResult DeclineReservation(int reservationId)
         {
             var reservation = this.unitOfWork.ReservationRepository.GetByID(reservationId);
-            reservation.StatusId = 3;
+            reservation.StatusId = ReservationStatus.StatusDeniedId;
             this.unitOfWork.Save();
 
             return this.Redirect(Url.Action("Index", "Home"));

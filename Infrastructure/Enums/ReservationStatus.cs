@@ -20,5 +20,13 @@ namespace Infrastructure.Enums
         public string Name { get; set; }
 
         public virtual ICollection<Reservation> Reservations { get; set; }
+
+        public static int StatusNewId => 1;
+
+        public static int StatusConfirmedId => 2;
+
+        public static int StatusDeniedId => 3;
+
+        public static int StatusWaitingProcessingId => 4;
     }
 }
