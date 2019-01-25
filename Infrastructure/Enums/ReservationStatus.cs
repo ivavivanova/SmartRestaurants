@@ -28,5 +28,7 @@ namespace Infrastructure.Enums
         public static int StatusDeniedId => 3;
 
         public static int StatusWaitingProcessingId => 4;
+
+        public static int StatusExpiredId => 5;
     }
 }

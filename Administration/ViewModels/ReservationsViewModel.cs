@@ -1,4 +1,5 @@
 ﻿using Administration.Models;
+using Infrastructure.Enums;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,8 +15,12 @@ namespace Administration.ViewModels
 
         public ReservationsViewModel(IEnumerable<Infrastructure.Entities.Reservation> reservations)
         {
-            ReadyReservations = reservations.Select(r => Reservation.MapFromEntity(r)).ToList();
-            ReservationsForProcessing = reservations.Select(r => Reservation.MapFromEntity(r)).ToList();
+            ReadyReservations = reservations
+                .Where(r => r.StatusId == ReservationStatus.StatusNewId || r.StatusId == ReservationStatus.StatusConfirmedId)
+                .Select(r => Reservation.MapFromEntity(r)).ToList();
+            ReservationsForProcessing = reservations
+                .Where(r => r.StatusId == ReservationStatus.StatusWaitingProcessingId)
+                .Select(r => Reservation.MapFromEntity(r)).ToList();
         }
 
         public List<Reservation> ReadyReservations { get; set; }

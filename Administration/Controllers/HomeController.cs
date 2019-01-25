@@ -100,6 +100,7 @@ namespace Administration.Controllers
 
             var reservation = this.unitOfWork.ReservationRepository.GetByID(model.ReservationId);
             reservation.ChairsNeeded = model.ChairsNeeded;
+            reservation.StatusId = ReservationStatus.StatusConfirmedId;
 
             this.unitOfWork.Save();
 
