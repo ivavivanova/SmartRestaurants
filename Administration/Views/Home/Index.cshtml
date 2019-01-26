@@ -22,8 +22,8 @@
             <tr data-id="@reservation.ReservationId">
                 <td>@reservation.CustomerEmail</td>
                 <td>@reservation.ChairsNeeded</td>
-                <td>@reservation.RegistrationDate</td>
-                <td>@reservation.ReservationDateTime</td>
+                <td>@reservation.RegistrationDate.ToString("dd.MM.yyyy г. HH:mm")</td>
+                <td>@reservation.ReservationDateTime.ToString("dd.MM.yyyy г. HH:mm")</td>
                 <td>
                     <span class="glyphicon glyphicon-pencil js-reservation-edit"
                           title="Редактиране"
@@ -57,8 +57,8 @@
             <tr data-id="@reservation.ReservationId">
                 <td class="email">@reservation.CustomerEmail</td>
                 <td>@reservation.ChairsNeeded</td>
-                <td>@reservation.RegistrationDate</td>
-                <td class="reservation-date">@reservation.ReservationDateTime</td>
+                <td>@reservation.RegistrationDate.ToString("dd.MM.yyyy г. HH:mm")</td>
+                <td class="reservation-date">@reservation.ReservationDateTime.ToString("dd.MM.yyyy г. HH:mm")</td>
                 <td>@reservation.Status</td>
                 <td>
                     <span class="glyphicon glyphicon-pencil js-reservation-edit"

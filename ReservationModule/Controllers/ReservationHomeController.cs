@@ -36,9 +36,10 @@ namespace ReservationModule.Controllers
             string userEmail,
             int chairsNeeded,
             DateTime date,
-            DateTime time)
+            DateTime time,
+            string phoneNum)
         {
-            CommunicationModule.SaveReservation(userEmail, chairsNeeded, date, time);
+            CommunicationModule.SaveReservation(userEmail, chairsNeeded, date, time, phoneNum);
             return View();
         }
     }

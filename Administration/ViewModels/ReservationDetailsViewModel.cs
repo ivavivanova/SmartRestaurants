@@ -22,7 +22,7 @@ namespace Administration.ViewModels
 
         public DateTime ReservationDateTime { get; set; }
 
-        public DateTime RegistrationDate { get; set; }
+        public string RegistrationDate { get; set; }
 
         public List<Table> TablesForReservation { get; set; }
 
@@ -31,6 +31,8 @@ namespace Administration.ViewModels
         public List<Table> FreeTables { get; set; }
 
         public int[] CheckedFreeTables { get; set; }
+
+        public string PhoneNumber { get; set; }
 
         public static ReservationDetailsViewModel MapFromEntities(
             Reservation entity,
@@ -42,10 +44,11 @@ namespace Administration.ViewModels
                 ReservationId = entity.Id,
                 CustomerEmail = entity.CustomerEmail,
                 ChairsNeeded = entity.ChairsNeeded,
-                RegistrationDate = entity.RegistrationDate,
+                RegistrationDate = entity.RegistrationDate.ToString("dd.MM.yyyy г. HH:mm"),
                 ReservationDateTime = entity.ReservationDate.Date + entity.ReservationTime.TimeOfDay,
                 TablesForReservation = tablesForReservation,
-                FreeTables = freeTables
+                FreeTables = freeTables,
+                PhoneNumber = entity.CustomerPhoneNumber
             };
         }
     }

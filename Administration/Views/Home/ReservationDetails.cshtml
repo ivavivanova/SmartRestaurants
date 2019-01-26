@@ -18,6 +18,12 @@
             <b>@Html.DisplayFor(m => m.CustomerEmail)</b>
         </div>
         <div class="col-md-4">
+            @Html.DisplayName("Телефон за връзка:")
+            <b>@Html.DisplayFor(m => m.PhoneNumber)</b>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-4">
             @Html.DisplayName("Резервация за:")
             <b>@Html.DisplayFor(m => m.ReservationDateTime)</b>
         </div>
@@ -76,7 +82,7 @@
                value="Откажи резервацията"
                data-id="@Model.ReservationId"
                data-email="@Model.CustomerEmail"
-               data-reservation-date="@Model.ReservationDateTime"
+               data-reservation-date="@Model.ReservationDateTime.ToString("dd.MM.yyyy г. HH:mm")"
                data-url="@Url.Action("DeclineReservation", "Home")"
                data-redirect-url="@Url.Action("Index", "Home")">
     </div>

@@ -19,12 +19,13 @@ namespace Administration.CommunicationModule
             string userEmail,
             int chairsNeeded,
             DateTime date,
-            DateTime time)
+            DateTime time,
+            string phoneNum)
         {
             var reservation = new Infrastructure.Entities.Reservation
             {
                 ChairsNeeded = chairsNeeded,
-                CustomerPhoneNumber = "0887300112",
+                CustomerPhoneNumber = phoneNum,
                 CustomerEmail = userEmail,
                 RegistrationDate = DateTime.Now,
                 ReservationDate = date.Date,
