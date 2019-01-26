@@ -19,7 +19,9 @@
     };
 })(jQuery);
 
-$('.js-datepicker').datepicker({});
+$('.js-datepicker').datepicker({
+    minDate: 0,
+    startDate: '-0m'});
 
 $('.timepicker').timepicker({
     interval: 30,
