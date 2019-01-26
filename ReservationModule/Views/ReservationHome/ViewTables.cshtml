@@ -1,7 +1,26 @@
-﻿
+﻿@model List<Infrastructure.DataTypes.FreeTable>
 @{
-    ViewBag.Title = "ViewTables";
+    ViewBag.Title = "Свободни маси";
 }
 
-<h2>ViewTables</h2>
+<table id="table_id" class="hover dataTable">
+    <thead>
+        <tr style="background:#c1abdb">
+            <th class="text-center">Максимален брой места</th>
+            <th class="text-center">Тип</th>
+            <th class="text-center">Брой свободни маси с тези критерии</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var table in Model)
+        {
+            <tr>
+                <td class="text-center">@table.MaxChairs</td>
+                <td class="text-center">@table.TableType</td>
+                <td class="text-center">@table.Count</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
 

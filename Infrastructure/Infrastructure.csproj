@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTypes\FreeTable.cs" />
     <Compile Include="Enums\Answer.cs" />
     <Compile Include="Entities\Feedback.cs" />
     <Compile Include="Entities\FeedbackQuestionAnswer.cs" />

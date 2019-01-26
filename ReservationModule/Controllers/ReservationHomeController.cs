@@ -28,7 +28,7 @@ namespace ReservationModule.Controllers
 
         public ActionResult ViewTables()
         {
-            return View();
+            return View(CommunicationModule.GetAllFreeTables());
         }
 
         [HttpPost]

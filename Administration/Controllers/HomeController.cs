@@ -67,7 +67,9 @@ namespace Administration.Controllers
         {
             var reservation = this.unitOfWork.ReservationRepository.GetByID(reservationId);
             var tables = reservationTableRepository.GetTablesByReservationId(reservationId);
-            var freeTables = tableRepository.GetFreeTables(unitOfWork.ReservationTableRepository.GetAll(), reservation);
+            var freeTables = tableRepository.GetFreeTables(
+                unitOfWork.ReservationTableRepository.GetAll(),
+                reservation.ReservationDate.Date.Add(reservation.ReservationTime.TimeOfDay));
 
             return View(ReservationDetailsViewModel.MapFromEntities(reservation, tables, freeTables));
         }

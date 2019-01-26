@@ -16,7 +16,7 @@ namespace Infrastructure.Repositories.Implementations
 
         private RepositoryBase<Table> TableRepository { get; set; }
 
-        public List<Table> GetFreeTables(IEnumerable<ReservationTable> reservationTables, Reservation reservation)
+        public List<Table> GetFreeTables(IEnumerable<ReservationTable> reservationTables, DateTime reservationDateTime)
         {
             return this.TableRepository
                 .GetAll()
@@ -26,7 +26,7 @@ namespace Infrastructure.Repositories.Implementations
                     reservationTables
                         .Where(r => r.TableId == t.Id &&
                             r.Reservation.ReservationDate.Date.Add(r.Reservation.ReservationTime.TimeOfDay) >
-                                reservation.ReservationDate.Date.Add(reservation.ReservationTime.TimeOfDay).AddHours(1)).Any()))
+                                reservationDateTime.AddHours(1)).Any()))
                  .ToList();
         }
     }

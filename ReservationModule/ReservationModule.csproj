@@ -151,6 +151,14 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DataTables\images\details_close.png" />
+    <Content Include="Content\DataTables\images\details_open.png" />
+    <Content Include="Content\DataTables\images\sort_asc.png" />
+    <Content Include="Content\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables\images\sort_both.png" />
+    <Content Include="Content\DataTables\images\sort_desc.png" />
+    <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables\jquery.dataTables.min.css" />
     <Content Include="Content\jquery.timepicker.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -199,6 +207,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.11.js" />
     <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
     <Content Include="Scripts\jquery.timepicker.js" />
     <Content Include="Scripts\jquery.timepicker.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -244,6 +254,10 @@
     <ProjectReference Include="..\Administration\Administration.csproj">
       <Project>{B14AF013-F23F-4101-9AE4-2B76E366296E}</Project>
       <Name>Administration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{958103A9-B976-4113-9508-24B3886284F2}</Project>
+      <Name>Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

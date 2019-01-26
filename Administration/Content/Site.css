@@ -84,3 +84,7 @@ input[type="search"] {
 .checkbox-list[type='checkbox'] {
     margin-right: 7px;
 }
+
+.bootstrap-dialog.type-primary .modal-header {
+    background-color: #5cb85c;
+}

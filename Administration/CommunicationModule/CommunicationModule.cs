@@ -1,7 +1,10 @@
 ﻿using Infrastructure;
+using Infrastructure.DataTypes;
+using Infrastructure.Entities;
 using Infrastructure.Enums;
 using Infrastructure.Repositories.Implementations;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Administration.CommunicationModule
@@ -29,7 +32,7 @@ namespace Administration.CommunicationModule
             };
 
             var table = tableRepositoryImplementation
-                .GetFreeTables(unitOfWork.ReservationTableRepository.GetAll(), reservation)
+                .GetFreeTables(unitOfWork.ReservationTableRepository.GetAll(), date.Date.Add(time.TimeOfDay))
                 .FirstOrDefault(t => t.MaxChairs >= chairsNeeded && chairsNeeded + 2 >= t.MaxChairs);
 
             if(table != null)
@@ -52,5 +55,13 @@ namespace Administration.CommunicationModule
             unitOfWork.Save();
         }
 
+        public static List<FreeTable> GetAllFreeTables()
+        {
+            return tableRepositoryImplementation
+                .GetFreeTables(unitOfWork.ReservationTableRepository.GetAll(), DateTime.Now)
+                .GroupBy(t => new { t.TypeId, t.MaxChairs })
+                .Select(group => new FreeTable { MaxChairs = group.Key.MaxChairs, TableType = group.First().TableType.Name, Count = group.Count() })
+                .ToList();
+        }
     }
 }

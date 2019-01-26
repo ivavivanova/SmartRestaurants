@@ -149,8 +149,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-dialog.css" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\DataTables\images\details_close.png" />
@@ -160,7 +158,6 @@
     <Content Include="Content\DataTables\images\sort_both.png" />
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
-    <Content Include="Content\DataTables\jquery.dataTables.css" />
     <Content Include="Content\DataTables\jquery.dataTables.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -210,8 +207,6 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

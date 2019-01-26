@@ -38,7 +38,7 @@ $(document).ready(function () {
             buttons: [
                 {
                     label: 'Да',
-                    cssClass: 'btn-primary',
+                    cssClass: 'btn-success',
                     action: function (dialog) {
                         dialog.close();
                         if (callback) {

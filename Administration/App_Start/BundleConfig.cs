@@ -28,7 +28,8 @@ namespace Administration
                       "~/Scripts/bootstrap-dialog.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/bootstrap-dialog.css",
                       "~/Content/DataTables/jquery.dataTables.min.css",
                       "~/Content/site.css"));
         }
