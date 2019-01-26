@@ -22,3 +22,41 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.restaurant {
+    margin-top: 20px;
+    border: 3px solid #af96cc;
+    height: 500px;
+    padding: 0px;
+    background-color: #af96cc;
+}
+
+.terrace {
+    border-left: 3px solid #af96cc;
+    height: 494px;
+    background-color: #4be5a7;
+}
+
+.kitchen, .wc {
+    border-right: 3px solid #af96cc;
+    border-bottom: 3px solid #af96cc;
+    height:100%;
+}
+
+.kitchen-row {
+    height: 200px;
+}
+
+.other-row{
+    height: 293px;
+}
+
+.no-padding-margin {
+    margin: 0px;
+    padding: 0px;
+}
+
+.no-background {
+    background-color: white;
+    height: 100%;
+}
