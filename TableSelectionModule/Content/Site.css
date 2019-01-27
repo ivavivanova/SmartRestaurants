@@ -46,3 +46,17 @@ textarea {
     margin: 0px;
     padding: 0px;
 }
+
+.color-red {
+    fill: red;
+    stroke: black;
+    stroke-width: 3;
+    opacity: 0.8;
+}
+
+.color-green {
+    fill: green;
+    stroke: black;
+    stroke-width: 3;
+    opacity: 0.8;
+}

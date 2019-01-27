@@ -61,7 +61,18 @@ namespace Administration.CommunicationModule
             return tableRepositoryImplementation
                 .GetFreeTables(unitOfWork.ReservationTableRepository.GetAll(), DateTime.Now)
                 .GroupBy(t => new { t.TypeId, t.MaxChairs })
-                .Select(group => new FreeTable { MaxChairs = group.Key.MaxChairs, TableType = group.First().TableType.Name, Count = group.Count() })
+                .Select(group => new FreeTable {
+                    MaxChairs = group.Key.MaxChairs,
+                    TableType = group.First().TableType.Name,
+                    Count = group.Count()})
+                .ToList();
+        }
+
+        public static List<string> GetFreeTableNumbers()
+        {
+            return tableRepositoryImplementation
+                .GetFreeTables(unitOfWork.ReservationTableRepository.GetAll(), DateTime.Now)
+                .Select(t => t.TableNumber)
                 .ToList();
         }
     }

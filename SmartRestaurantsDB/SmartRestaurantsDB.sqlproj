@@ -90,5 +90,6 @@
     <None Include="Data\TableStatusData.sql" />
     <None Include="Data\TableTypeData.sql" />
     <None Include="Data\SampleData.sql" />
+    <None Include="Data\RestaurantTables.sql" />
   </ItemGroup>
 </Project>
