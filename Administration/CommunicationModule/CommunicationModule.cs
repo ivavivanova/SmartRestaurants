@@ -12,8 +12,6 @@ namespace Administration.CommunicationModule
     public class CommunicationModule
     {
         private static UnitOfWork unitOfWork = new UnitOfWork();
-        private static TableRepositoryImplementation tableRepositoryImplementation
-            = new TableRepositoryImplementation(unitOfWork.TableRepository);
 
         public static void SaveReservation(
             string userEmail,
@@ -22,6 +20,8 @@ namespace Administration.CommunicationModule
             DateTime time,
             string phoneNum)
         {
+            unitOfWork = new UnitOfWork();
+
             var reservation = new Infrastructure.Entities.Reservation
             {
                 ChairsNeeded = chairsNeeded,
@@ -32,8 +32,8 @@ namespace Administration.CommunicationModule
                 ReservationTime = time
             };
 
-            var table = tableRepositoryImplementation
-                .GetFreeTables(unitOfWork.ReservationTableRepository.GetAll(), date.Date.Add(time.TimeOfDay))
+            var table = TableRepositoryImplementation
+                .GetFreeTables(unitOfWork.TableRepository.GetAll(), unitOfWork.ReservationTableRepository.GetAll(), date.Date.Add(time.TimeOfDay))
                 .FirstOrDefault(t => t.MaxChairs >= chairsNeeded && chairsNeeded + 2 >= t.MaxChairs);
 
             if(table != null)
@@ -58,8 +58,10 @@ namespace Administration.CommunicationModule
 
         public static List<FreeTable> GetAllFreeTables()
         {
-            return tableRepositoryImplementation
-                .GetFreeTables(unitOfWork.ReservationTableRepository.GetAll(), DateTime.Now)
+            unitOfWork = new UnitOfWork();
+
+            return TableRepositoryImplementation
+                .GetFreeTables(unitOfWork.TableRepository.GetAll(), unitOfWork.ReservationTableRepository.GetAll(), DateTime.Now)
                 .GroupBy(t => new { t.TypeId, t.MaxChairs })
                 .Select(group => new FreeTable {
                     MaxChairs = group.Key.MaxChairs,
@@ -70,10 +72,25 @@ namespace Administration.CommunicationModule
 
         public static List<string> GetFreeTableNumbers()
         {
-            return tableRepositoryImplementation
-                .GetFreeTables(unitOfWork.ReservationTableRepository.GetAll(), DateTime.Now)
+            unitOfWork = new UnitOfWork();
+
+            return TableRepositoryImplementation
+                .GetFreeTables(unitOfWork.TableRepository.GetAll(), unitOfWork.ReservationTableRepository.GetAll(), DateTime.Now)
                 .Select(t => t.TableNumber)
                 .ToList();
+        }
+
+        public static void OccupiedTable(string tableNum)
+        {
+            unitOfWork = new UnitOfWork();
+
+            var table = unitOfWork.TableRepository.GetAll().FirstOrDefault(t => t.TableNumber.Contains(tableNum));
+
+            if(table != null)
+            {
+                table.StatusId = TableStatus.StatusOccupiedId;
+                unitOfWork.Save();
+            }
         }
     }
 }

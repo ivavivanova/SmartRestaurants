@@ -2,24 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories.Implementations
 {
     public class TableRepositoryImplementation
     {
-        public TableRepositoryImplementation(RepositoryBase<Table> tableRepository)
+        public static List<Table> GetFreeTables(
+            IEnumerable<Table> tables,
+            IEnumerable<ReservationTable> reservationTables,
+            DateTime reservationDateTime)
         {
-            TableRepository = tableRepository;
-        }
-
-        private RepositoryBase<Table> TableRepository { get; set; }
-
-        public List<Table> GetFreeTables(IEnumerable<ReservationTable> reservationTables, DateTime reservationDateTime)
-        {
-            return this.TableRepository
-                .GetAll()
+            return tables
                 .Where(t => t.StatusId == 1 && (
                     !reservationTables
                         .Where(r => r.TableId == t.Id).Any() ||

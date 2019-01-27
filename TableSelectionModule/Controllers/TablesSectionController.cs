@@ -10,5 +10,12 @@ namespace TableSelectionModule.Controllers
         {
             return View(CommunicationModule.GetFreeTableNumbers());
         }
+
+        [HttpPost]
+        public ActionResult GetTable(string tableNum)
+        {
+            CommunicationModule.OccupiedTable(tableNum);
+            return View("Index", CommunicationModule.GetFreeTableNumbers());
+        }
     }
 }

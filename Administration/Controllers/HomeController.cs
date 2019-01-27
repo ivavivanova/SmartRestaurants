@@ -11,14 +11,6 @@ namespace Administration.Controllers
     {
         public static string UserRole;
         private UnitOfWork unitOfWork = new UnitOfWork();
-        private readonly ReservationTableRepositoryImplementation reservationTableRepository;
-        private readonly TableRepositoryImplementation tableRepository;
-
-        public HomeController()
-        {
-            reservationTableRepository = new ReservationTableRepositoryImplementation(unitOfWork.ReservationTableRepository);
-            tableRepository = new TableRepositoryImplementation(unitOfWork.TableRepository);
-        }
 
         [HttpGet]
         public ActionResult Index()
@@ -66,8 +58,10 @@ namespace Administration.Controllers
         public ActionResult ReservationDetails(int reservationId)
         {
             var reservation = this.unitOfWork.ReservationRepository.GetByID(reservationId);
-            var tables = reservationTableRepository.GetTablesByReservationId(reservationId);
-            var freeTables = tableRepository.GetFreeTables(
+            var tables = ReservationTableRepositoryImplementation
+                .GetTablesByReservationId(unitOfWork.ReservationTableRepository, reservationId);
+            var freeTables = TableRepositoryImplementation.GetFreeTables(
+                unitOfWork.TableRepository.GetAll(),
                 unitOfWork.ReservationTableRepository.GetAll(),
                 reservation.ReservationDate.Date.Add(reservation.ReservationTime.TimeOfDay));
 
@@ -77,7 +71,8 @@ namespace Administration.Controllers
         [HttpPost]
         public ActionResult ReservationDetails(ReservationDetailsViewModel model)
         {
-            var reservationTablesForRemove = reservationTableRepository.GetByReservationId(model.ReservationId);
+            var reservationTablesForRemove = ReservationTableRepositoryImplementation
+                .GetByReservationId(unitOfWork.ReservationTableRepository, model.ReservationId);
 
             if (model.CheckedTablesForReservation.Any())
             {
