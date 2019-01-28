@@ -80,6 +80,24 @@ namespace Administration.CommunicationModule
                 .ToList();
         }
 
+        public static string OccupiedTableByEmail(string email)
+        {
+            unitOfWork = new UnitOfWork();
+
+            var table = unitOfWork.ReservationTableRepository
+                .GetAll()
+                .FirstOrDefault(r => r.Reservation.CustomerEmail.Replace(" ", "") == email)?
+                .Table;
+
+            if (table != null)
+            {
+                table.StatusId = TableStatus.StatusOccupiedId;
+                unitOfWork.Save();
+            }
+
+            return table?.TableNumber;
+        }
+
         public static void OccupiedTable(string tableNum)
         {
             unitOfWork = new UnitOfWork();

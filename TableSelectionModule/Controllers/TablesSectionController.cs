@@ -12,6 +12,12 @@ namespace TableSelectionModule.Controllers
         }
 
         [HttpPost]
+        public ActionResult Index(string userEmail)
+        {
+            return Json(new { tableNum = CommunicationModule.OccupiedTableByEmail(userEmail) });
+        }
+
+        [HttpPost]
         public ActionResult GetTable(string tableNum)
         {
             CommunicationModule.OccupiedTable(tableNum);
