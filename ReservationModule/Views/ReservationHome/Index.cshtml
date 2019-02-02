@@ -11,17 +11,17 @@
                 <div class="form-group">
                     <div class="col-md-6 col-sm-6" style="margin-bottom: 10px;">
                         <label for="userEmail">Имейл адрес:</label>
-                        <input id="userEmail" name="userEmail" class="form-control" />
+                        <input id="userEmail" name="userEmail" class="form-control" required />
                     </div>
                     <div class="col-md-6 col-sm-6" style="margin-bottom: 10px;">
                         <label for="phoneNum">Телефон за връзка:</label>
-                        <input id="phoneNum" name="phoneNum" class="form-control" />
+                        <input id="phoneNum" name="phoneNum" class="form-control" required/>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-6 col-sm-6" style="margin-bottom: 10px;">
                         <label for="chairsNeeded">Брой места:</label>
-                        <input id="chairsNeeded" name="chairsNeeded" class="form-control" />
+                        <input id="chairsNeeded" name="chairsNeeded" class="form-control" required/>
                     </div>
                     <div class="col-md-6 col-sm-6" style="margin-bottom: 10px;">
                         <label for="tableType">Вид маса:</label>
@@ -36,7 +36,7 @@
                         <label for="type">Резервирай за дата:</label>
                         <div class="col-md-12 input-group date js-datepicker">
                             <div>
-                                <input type="text" id="date" name="date" class="form-control" />
+                                <input type="text" id="date" name="date" class="form-control" required/>
                             </div>
                             <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 form-group">
-                    <input type="submit" class="btn btn-primary pull-right" value="Завърши резервацията" />
+                    <input type="submit" class="btn btn-primary pull-right" value="Завърши резервацията" required/>
                 </div>
             }
         </div>

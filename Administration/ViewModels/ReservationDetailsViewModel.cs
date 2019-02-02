@@ -1,6 +1,7 @@
 ﻿using Infrastructure.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Administration.ViewModels
 {
@@ -18,6 +19,8 @@ namespace Administration.ViewModels
 
         public string CustomerEmail { get; set; }
 
+
+        [Required(ErrorMessage = "Моля, въведете стойност.")]
         public int ChairsNeeded { get; set; }
 
         public DateTime ReservationDateTime { get; set; }
