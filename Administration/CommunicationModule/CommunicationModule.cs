@@ -18,7 +18,8 @@ namespace Administration.CommunicationModule
             int chairsNeeded,
             DateTime date,
             DateTime time,
-            string phoneNum)
+            string phoneNum,
+            int tableTypeId)
         {
             unitOfWork = new UnitOfWork();
 
@@ -34,7 +35,7 @@ namespace Administration.CommunicationModule
 
             var table = TableRepositoryImplementation
                 .GetFreeTables(unitOfWork.TableRepository.GetAll(), unitOfWork.ReservationTableRepository.GetAll(), date.Date.Add(time.TimeOfDay))
-                .FirstOrDefault(t => t.MaxChairs >= chairsNeeded && chairsNeeded + 2 >= t.MaxChairs);
+                .FirstOrDefault(t => t.MaxChairs >= chairsNeeded && chairsNeeded + 2 >= t.MaxChairs && t.TypeId == tableTypeId);
 
             if(table != null)
             {
