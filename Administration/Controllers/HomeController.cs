@@ -34,7 +34,7 @@ namespace Administration.Controllers
 
                 unitOfWork.Save();
 
-                return View(new ReservationsViewModel(reservations));
+                return View(new ReservationsViewModel(unitOfWork.ReservationRepository.GetAll()));
             }
         }
 
