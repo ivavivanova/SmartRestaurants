@@ -2,6 +2,7 @@
 using Infrastructure;
 using Infrastructure.Enums;
 using Infrastructure.Repositories.Implementations;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -21,7 +22,19 @@ namespace Administration.Controllers
             }
             else
             {
-                return View(new ReservationsViewModel(unitOfWork.ReservationRepository.GetAll()));
+                var reservations = unitOfWork.ReservationRepository.GetAll();
+                var reservationsForDelete = reservations
+                .Where(r => r.ReservationDate <= DateTime.Now.Date
+                    || r.ReservationTime.TimeOfDay.Add(new TimeSpan(0, 30, 0)) > DateTime.Now.TimeOfDay);
+
+                foreach (var reservationForDelete in reservationsForDelete)
+                {
+                    reservationForDelete.StatusId = ReservationStatus.StatusExpiredId;
+                }
+
+                unitOfWork.Save();
+
+                return View(new ReservationsViewModel(reservations));
             }
         }
 
