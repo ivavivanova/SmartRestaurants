@@ -16,7 +16,9 @@ namespace Infrastructure.Repositories.Implementations
             return tables
                 .Where(t => t.StatusId == 1 && (
                     !reservationTables
-                        .Where(r => r.TableId == t.Id).Any() ||
+                        .Where(r => r.Reservation.StatusId != ReservationStatus.StatusDeniedId
+                            && r.Reservation.StatusId != ReservationStatus.StatusExpiredId
+                             && r.TableId == t.Id).Any() ||
                     reservationTables
                         .Where(r => r.Reservation.StatusId != ReservationStatus.StatusDeniedId
                             && r.Reservation.StatusId != ReservationStatus.StatusExpiredId
