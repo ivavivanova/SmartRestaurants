@@ -1,4 +1,5 @@
 ﻿using Infrastructure.Entities;
+using Infrastructure.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,9 @@ namespace Infrastructure.Repositories.Implementations
                     !reservationTables
                         .Where(r => r.TableId == t.Id).Any() ||
                     reservationTables
-                        .Where(r => r.TableId == t.Id &&
+                        .Where(r => r.Reservation.StatusId != ReservationStatus.StatusDeniedId
+                            && r.Reservation.StatusId != ReservationStatus.StatusExpiredId
+                            && r.TableId == t.Id &&
                             r.Reservation.ReservationDate.Date.Add(r.Reservation.ReservationTime.TimeOfDay) >
                                 reservationDateTime.AddHours(1)).Any()))
                  .ToList();
